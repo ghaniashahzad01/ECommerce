@@ -1,8 +1,10 @@
 import React from 'react'
+import DarkModee from './DarkModee';
 import {IoMdSearch} from "react-icons/io"
 import {FaCartShopping} from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import {FiShoppingBag} from "react-icons/fi";
+
 
 const Menu = [
     {
@@ -85,7 +87,7 @@ const Navbar = ({handleOrderPopup}) => {
                </button>
 
                <div>
-                {/* <DarkMode /> */}
+                <DarkModee/>
                </div>
             </div>
           </div>
