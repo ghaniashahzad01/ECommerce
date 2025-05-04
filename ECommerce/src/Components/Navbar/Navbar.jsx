@@ -50,7 +50,7 @@ const Dropdownlist = [
 
 const Navbar = ({handleOrderPopup}) => {
   return (
-    <div className="shadow-md bg-white dark:bg-text-white duration-200
+    <div className="shadow-md bg-white dark:text-white duration-200
      relative z-40">
         <div className="bg-primary/40 py-2">
          
@@ -67,7 +67,7 @@ const Navbar = ({handleOrderPopup}) => {
                 <div className="relative group hidden sm:block">
                    <input type="text" placeholder="Search" className="w-[200px] sm:w-[200px] group-hover:w-[300px]
                    transition-all duration-300 rounded-lg border border-gray-300 py-1 px-2 text-sm focus:outline-none
-                   focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-slate-800"/>
+                   focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-slate-800 dark:text-white"/>
 
                    <IoMdSearch className="text-slate-800 group-hover:text-primary absolute top:1/2
                    -translate-y-1/2 right-3" />
@@ -99,6 +99,29 @@ const Navbar = ({handleOrderPopup}) => {
                    </a>
                </li>
             ))}
+
+            <li className='group relative cursor-pointer'>
+                <a href="#" className='flex items-center gap-[2px] py-2'> Trending Products
+                    <span>
+                        <FaCaretDown className='transition-all duration-200 
+                        group-hover:rotate-180' />
+                    </span>
+                </a>
+                <div className='absolute z-[999] hidden group-hover:block 
+                w-[200px] rounded-md bg-white p-2 text-black shadow-md'>
+
+                  <ul>
+                  {Dropdownlist.map((data, index) => (
+                     <li key={index}>
+                     <a href={data.link} className="hover:text-gray-400 duration-300">
+                       {data.name}
+                     </a>
+                     </li>
+                    ))}
+                  </ul>  
+
+                </div>
+            </li>
         </ul>
       </div>
     </div>
