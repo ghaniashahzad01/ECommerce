@@ -80,15 +80,29 @@ const Navbar = ({handleOrderPopup}) => {
 
                     <span className='group-hover:block hidden transition-all duration-200'>Order</span>
 
-                    <FaCartShopping  />
+                    <FaCartShopping className='text-xl text-white drop-shadow-sm cursor-pointer' />
 
                </button>
+
+               <div>
+                {/* <DarkMode /> */}
+               </div>
             </div>
           </div>
         </div>
-      
+      <div data-aos = "zoom-in" className='flex justify-center'>
+        <ul className='sm:flex hidden items-center gap-4'>
+            {Menu.map((data)=>(
+               <li key={data.id}>
+                   <a href={data.link} className='inline-block px-4 hover:text-primary duration-200'>
+                      {data.name}
+                   </a>
+               </li>
+            ))}
+        </ul>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Navbar
